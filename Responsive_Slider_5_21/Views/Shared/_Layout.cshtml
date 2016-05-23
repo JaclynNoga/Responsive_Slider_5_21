@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-2.2.4.min.js.js"></script>
+    <script src="~/Scripts/jquery.cycle2.min.js"></script>
+    <style type="text/css">
+        * {padding:0; margin:0;}
+        body {font-family: sans-serif;}
+        img {max-width: 100%;}
+        .cycle-slideshow {
+            width:100%;
+            display:block;
+            position:relative;
+            margin:0 auto;
+        }
+        .cycle-prev, .cycle-next{
+            font-size: 200%;
+            color:#ffffff;
+            display: block;
+            position: absolute;
+            top: 50%;
+            z-index: 9999;
+            cursor: pointer;
+            margin-top: -16px;
+        }
+        .cycle-prev { left: 10%;}
+        .cycle-next { right: 10%; }
+        .cycle-pager{
+            width: 100%;
+            text-align: center;
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            z-index: 9999;
+            cursor: pointer;
+        }
+        .cycle-pager span {
+            text-indent: 100%;
+            white-space: nowrap;
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            border: 1px solid #ffffff;
+            border-radius: 50px;
+            margin: 0 10px;
+            overflow: hidden;
+        }
+        .cycle-pager .cycle-pager-active {background: #ffffff;}
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
