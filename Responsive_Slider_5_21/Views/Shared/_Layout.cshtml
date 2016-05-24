@@ -16,11 +16,11 @@
             width:100%;
             display:block;
             position:relative;
-            margin:0 auto;
+            /*margin:0 auto;*/
         }
         .cycle-prev, .cycle-next{
             font-size: 200%;
-            color:#ffffff;
+            color:#000000;
             display: block;
             position: absolute;
             top: 50%;
@@ -28,8 +28,8 @@
             cursor: pointer;
             margin-top: -16px;
         }
-        .cycle-prev { left: 10%;}
-        .cycle-next { right: 10%; }
+        .cycle-prev { left: -5%;}
+        .cycle-next { right: -5%; }
         .cycle-pager{
             width: 100%;
             text-align: center;
@@ -54,7 +54,7 @@
     </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -72,7 +72,41 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div>*@
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
